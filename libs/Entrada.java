@@ -31,5 +31,23 @@ public class Entrada {
         return entrada.nextDouble();
     }
 
+    public static String lerPalavra(){
+        return entrada.next();
+    }
+
+    public static String lerPalavraMsg(String mensagem){
+        System.out.println(mensagem);
+        return entrada.next();
+    }
+
+    public static String lerLinha(){
+        return entrada.nextLine();
+    }
+
+    public static String lerLinhaMsg(String mensagem){
+        System.out.println(mensagem);
+        return entrada.nextLine();
+    }
+
 
 }
