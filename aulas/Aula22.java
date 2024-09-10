@@ -42,12 +42,11 @@ public class Aula22 {
        System.out.println("-- Algoritmos e Estruturas de Dados --");
        //Aula21.aula();
        String st1;
-       int i = 9;
+       
        char c = 'o';
     
        st1= "Algoritmos";
 
-       //System.out.println(obterPosicaoProxChar(st1, i, c));
        System.out.println(tiraCaracter(st1,c));
     
      }

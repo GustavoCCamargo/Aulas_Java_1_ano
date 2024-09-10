@@ -1,5 +1,6 @@
 package libs;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Entrada {
@@ -47,6 +48,11 @@ public class Entrada {
     public static String lerLinhaMsg(String mensagem){
         System.out.println(mensagem);
         return entrada.nextLine();
+    }
+
+    public static int sorteio(int a , int b){
+        
+      return new Random().nextInt(b) + a;
     }
 
 
