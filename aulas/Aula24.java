@@ -14,6 +14,7 @@ public class Aula24 {
         CalculaPontos();
     }
 
+    //Exercício 01 Lista
     public static void MostrarMaioresMedia(){
 
         int [] nota;
@@ -49,6 +50,7 @@ public class Aula24 {
 
     }
 
+    //Exercício sorteio de números
     public static void CalculaPontos() {
         int [] vet1, vet2;
         int pontos = 0;
@@ -58,7 +60,7 @@ public class Aula24 {
         Entrada.abrir();
 
         for(int i = 0; i<vet1.length; i++){
-
+            
             vet1[i] = Entrada.sorteio(0, 50);
             System.out.println(vet1[i]);
         }
@@ -81,7 +83,9 @@ public class Aula24 {
                     break;
                 }
 
-                
+                if (pontos == 5) {
+                    break;
+                }
 
             }
         }
