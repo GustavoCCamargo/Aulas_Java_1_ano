@@ -1,8 +1,6 @@
 package aulas;
 
 
-import java.util.Random;
-
 import libs.Entrada;
 
 public class Aula24 {
