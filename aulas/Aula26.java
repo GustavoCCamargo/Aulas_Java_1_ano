@@ -6,15 +6,18 @@ import libs.Vetores;
 public class Aula26 {
 
     public static void aula(){
-        int [] num = new int[5];
-        int [] vet;
-        num[0] = 1;
-        num[1] = 2;
-        num[2] = 3;
-        num[3] = 4;
-        num[4] = 5;
-        vet = Vetores.subVetor(num, -20, 10);
-        Vetores.mostrarInteiros(vet);
+
+     int [] vetor = new int[6];
+     int [] b; 
+     
+     vetor = Vetores.lerInteiros(6);
+     Vetores.mostrarInteiros(vetor);   
+
+     b = Vetores.obterIndicesInteiros(vetor, 2);
+
+     Vetores.mostrarInteiros(b);
+
+     
 
     }
 

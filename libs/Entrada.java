@@ -32,20 +32,22 @@ public class Entrada {
         return entrada.nextDouble();
     }
 
-    public static String lerPalavra(){
-        return entrada.next();
+    
+
+    public static char lerCaracter(){
+        return entrada.next().charAt(0);
     }
 
-    public static String lerPalavraMsg(String mensagem){
+    public static char lerCaracter(String mensagem){
         System.out.println(mensagem);
-        return entrada.next();
+        return entrada.next().charAt(0);
     }
 
-    public static String lerLinha(){
+    public static String lerString(){
         return entrada.nextLine();
     }
 
-    public static String lerLinhaMsg(String mensagem){
+    public static String lerStringMsg(String mensagem){
         System.out.println(mensagem);
         return entrada.nextLine();
     }

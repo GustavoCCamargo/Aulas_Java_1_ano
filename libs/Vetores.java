@@ -188,7 +188,7 @@ public class Vetores {
 
      public static int[] subVetor(int [] v, int a, int b){
 
-        int [] vet = new int[b-a];
+        
         int [] vetor = new int[0];
         int index = 0;
 
@@ -207,6 +207,8 @@ public class Vetores {
         if (b >= v.length) {
             b = v.length;
         }
+
+        int [] vet = new int[b-a];
         
 
         if (b<a) {
@@ -223,5 +225,214 @@ public class Vetores {
         return vet;
 
      }
+
+
+     public static int[] copiarInt(int [] v){
+        int [] vetor = new int[v.length];
+
+        for(int i = 0; i<v.length; i++){
+            vetor[i] = v[i];
+        }
+
+        return vetor;
+     }
+
+     public static float[] copiarReais(float[] v){
+        float [] vetor = new float[v.length];
+
+        for(int i = 0; i<v.length; i++){
+            vetor[i] = v[i];
+        }
+
+        return vetor;
+     }
+
+     public static String[] copiarString(String[] v){
+        String [] vetor = new String[v.length];
+
+        for(int i = 0; i<v.length; i++){
+            vetor[i] = v[i];
+        }
+
+        return vetor;
+     }
+
+     public static Boolean [] copiarBoolean(Boolean[] v){
+        Boolean [] vetor = new Boolean[v.length];
+
+        for(int i = 0; i<v.length; i++){
+            vetor[i] = v[i];
+        }
+
+        return vetor;
+     }
+
+     public static int[] lerInteiros(int n){
+        int [] vet = new int[n];
+
+        Entrada.abrir();
+        
+        System.out.println("DIGITE OS VALORES!");
+
+        for(int i = 0 ; i<vet.length; i++){
+
+            vet [i] = Entrada.LerInt();
+        }
+
+        return vet;
+     }
+
+     public static double[] lerReais(int n){
+        double [] vet = new double[n];
+
+        Entrada.abrir();
+        
+        System.out.println("DIGITE OS VALORES!");
+
+        for(int i = 0 ; i<vet.length; i++){
+
+            vet [i] = Entrada.LerDouble();
+        }
+
+        return vet;
+     }
+
+
+     public static char[] lerCaracteres(int n){
+        char [] vet = new char[n];
+
+        Entrada.abrir();
+        
+        System.out.println("DIGITE OS CARACTERES!");
+
+        for(int i = 0 ; i<vet.length; i++){
+
+            vet [i] = Entrada.lerCaracter();
+        }
+
+        return vet;
+     }
+
+     public static String[] lerStrings(int n){
+        String [] vet = new String[n];
+
+        Entrada.abrir();
+        
+        System.out.println("DIGITE AS STRINGS!");
+
+        for(int i = 0 ; i<vet.length; i++){
+
+            vet [i] = Entrada.lerString();
+        }
+
+        return vet;
+
+     }
+
+
+     public static int obterPosicaoInteiro(int [] v, int valor_buscar, int valor_pos_inicial){
+
+        for(int i = valor_pos_inicial; i<v.length;i++){
+
+            if (v[i] == valor_buscar) {
+                return i;
+            }
+
+        }
+
+        return -1;
+    }
+
+
+    public static int obterPosicaoReal(double [] v, int valor_buscar, int valor_pos_inicial){
+
+        for(int i = valor_pos_inicial; i<v.length;i++){
+
+            if (v[i] == valor_buscar) {
+                return i;
+            }
+
+        }
+
+        return -1;
+    }
+
+    public static int obterPosicaoCaracteres(char [] v, char valor_buscar, int valor_pos_inicial){
+
+        for(int i = valor_pos_inicial; i<v.length;i++){
+
+            if (v[i] == valor_buscar) {
+                return i;
+            }
+
+        }
+
+        return -1;
+    }
+
+
+    public static int obterPosicaoLogico(boolean [] v, boolean valor_buscar, int valor_pos_inicial){
+
+        for(int i = valor_pos_inicial; i<v.length;i++){
+
+            if (v[i] == valor_buscar) {
+                return i;
+            }
+
+        }
+
+        return -1;
+    }
+
+
+    public static int obterPosicaoCadeiaDeCaracteres(String [] v, String valor_buscar, int valor_pos_inicial){
+
+        for(int i = valor_pos_inicial; i<v.length;i++){
+
+            if (v[i] == valor_buscar) {
+                return i;
+            }
+
+        }
+
+        return -1;
+    }
+
+    public static int[] obterIndicesInteiros(int[] v , int valor_buscar){
+        int cont=0, index = 0;
+
+
+        for(int i = 0; i<v.length;i++){
+            if (v[i] == valor_buscar) {
+                cont++;
+            }
+        }
+
+        
+        int [] vetor = new int[cont];
+
+        if (cont == 0) {
+            return vetor;
+        }
+
+        for(int i = 0; i<v.length;i++){
+            if (v[i] == valor_buscar) {
+                vetor[index] = i;
+                index ++;  
+            }
+        }
+
+
+        return vetor;
+        
+    }
+
+
+
+
+
+
+
+    
     
 }
