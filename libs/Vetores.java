@@ -425,14 +425,5 @@ public class Vetores {
 
         return vetor;
         
-    }
-
-
-
-
-
-
-
-    
-    
+    }    
 }
