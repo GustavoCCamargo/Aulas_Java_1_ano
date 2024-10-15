@@ -1,5 +1,6 @@
 package trabalhos;
 
+import libs.Entrada;
 import libs.Vetores;
 
 public class T3 {
@@ -30,6 +31,9 @@ public class T3 {
 
        //Vetores.mostrarInteiros(aplicarMascara(new int[] {1,2,3,4,5,6,7,}, new boolean[]{true,false,true,false,false,true,false}));
         
+       // Teste exercício 7
+
+       Vetores.mostrarInteiros(uniaoVetores(new int[] {1, 2, 3, 4, 5, 6, 7}, new int[] {5, 6, 7, 8, 9, 10}));
     }
 
     public static void mostrarInteiros(int [] vet, char a) {
@@ -160,7 +164,10 @@ public class T3 {
     public static int [] uniaoVetores(int [] a, int [] b){
 
         int [] vet_uniao = new int[a.length + b.length];
+        
         int index = 0;
+        int conta_repe = 0;
+        
 
         for(int i =0; i <a.length;i++){
 
@@ -174,12 +181,54 @@ public class T3 {
             index++;
         }
 
-        for(int i = 0; i<vet_uniao.length;i++){
+        int cont = 1;
 
+        for(int i = 0; i<vet_uniao.length;i++){
+            for(int j = cont;j<vet_uniao.length;j++){
+
+                if (vet_uniao[i]==vet_uniao[j]) {
+                    conta_repe++;
+                }
+            }
+            cont++;
+        }
+
+        int [] vet_conjunto = new int[vet_uniao.length-conta_repe];
+        int Index = 0;
+       
+        for(int i = 0; i<vet_conjunto.length;i++){
+
+            for(int j = i;j<vet_uniao.length;j++){
+
+                // if (vet_conjunto[i] != vet_uniao[j]) {
+                //     vet_conjunto[Index] = vet_uniao[j];
+                //     Index++;
+                //     break;
+                // }
+                // if (vet_conjunto[i]==vet_uniao[j]) {
+                //    break;
+                // }
+
+                for(int c = 0; c<vet_conjunto.length;c++){
+                    if (vet_uniao[j] == vet_conjunto[c]) {
+                        break;
+                    }
+
+                    if (c == vet_conjunto.length-1) {
+                        vet_conjunto[Index] = vet_uniao[j];
+                        Index++;
+                    }
+                }
+               
+            }
             
         }
-       
 
+
+        
+
+        System.out.println(conta_repe);
+    
         return vet_uniao;
     }
 
