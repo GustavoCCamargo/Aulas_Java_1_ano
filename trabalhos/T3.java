@@ -33,7 +33,7 @@ public class T3 {
         
        // Teste exercício 7
 
-       Vetores.mostrarInteiros(uniaoVetores(new int[] {1, 2, 3, 4, 5, 6, 7}, new int[] {5, 6, 7, 8, 9, 10}));
+       Vetores.mostrarInteiros(uniaoVetores(new int[] {1,1,1,1}, new int[] {2,2,2,2}));
     }
 
     public static void mostrarInteiros(int [] vet, char a) {
@@ -193,7 +193,7 @@ public class T3 {
             cont++;
         }
 
-        int [] vet_conjunto = new int[vet_uniao.length-conta_repe];
+        int [] vet_conjunto = new int[vet_uniao.length];
         int Index = 0;
        
         for(int i = 0; i<vet_conjunto.length;i++){
@@ -224,7 +224,7 @@ public class T3 {
             
         }
 
-
+        Vetores.mostrarInteiros(vet_conjunto);
         
 
         System.out.println(conta_repe);
