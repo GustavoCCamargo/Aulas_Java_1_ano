@@ -426,4 +426,38 @@ public class Vetores {
         return vetor;
         
     }    
+
+    public static int [] retiraRepeticaoInt(int [] vet) {
+        int [] vet_conjunto = new int[vet.length];
+        int Index = 0;
+
+       
+        for(int i = 0; i<vet_conjunto.length;i++){
+
+            for(int j = i;j<vet.length;j++){
+
+                for(int c = 0; c<vet_conjunto.length;c++){
+                    if (vet[j] == vet_conjunto[c]) {
+                        break;
+                    }
+
+                    if (c == vet_conjunto.length-1) {
+                        vet_conjunto[Index] = vet[j];
+                        Index++;
+                    }
+                }
+               
+            }
+            
+        }
+
+        int [] vet_final = new int[Index];
+
+        for(int i = 0; i<Index; i++){
+            vet_final [i] = vet_conjunto[i];
+        }
+
+    
+        return vet_final;
+    }
 }

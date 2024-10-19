@@ -33,7 +33,17 @@ public class T3 {
         
        // Teste exercício 7
 
-       Vetores.mostrarInteiros(uniaoVetores(new int[] {1,1,1,1}, new int[] {2,2,2,2}));
+       //Vetores.mostrarInteiros(uniaoVetores(new int[] {1,1,1,1}, new int[] {2,2,2,2}));
+
+       // Teste exercício 8
+
+      // Vetores.mostrarInteiros(intersecaoVetor(new int[] {1,1,1,2}, new int[] {2,2,1,2}));
+
+        // Teste exercício 9
+
+       Vetores.mostrarInteiros(DiferencaEntreVetores(new int[] {1,1,3,3,4}, new int[] {2,2,5,6,4}));
+
+       //Vetores.mostrarInteiros(Vetores.retiraRepeticaoInt(DiferencaEntreVetores(new int[] {1,1,3,4}, new int[] {2,2,5,6})));
     }
 
     public static void mostrarInteiros(int [] vet, char a) {
@@ -164,11 +174,10 @@ public class T3 {
     public static int [] uniaoVetores(int [] a, int [] b){
 
         int [] vet_uniao = new int[a.length + b.length];
-        
-        int index = 0;
         int conta_repe = 0;
+        int index = 0;
         
-
+        //Concatena os dois vetores em um só;
         for(int i =0; i <a.length;i++){
 
             vet_uniao [index] = a[i];
@@ -181,33 +190,15 @@ public class T3 {
             index++;
         }
 
-        int cont = 1;
-
-        for(int i = 0; i<vet_uniao.length;i++){
-            for(int j = cont;j<vet_uniao.length;j++){
-
-                if (vet_uniao[i]==vet_uniao[j]) {
-                    conta_repe++;
-                }
-            }
-            cont++;
-        }
-
+        //adiciona os valores sem repetição para um novo vetor.
+      
         int [] vet_conjunto = new int[vet_uniao.length];
         int Index = 0;
+
        
         for(int i = 0; i<vet_conjunto.length;i++){
 
             for(int j = i;j<vet_uniao.length;j++){
-
-                // if (vet_conjunto[i] != vet_uniao[j]) {
-                //     vet_conjunto[Index] = vet_uniao[j];
-                //     Index++;
-                //     break;
-                // }
-                // if (vet_conjunto[i]==vet_uniao[j]) {
-                //    break;
-                // }
 
                 for(int c = 0; c<vet_conjunto.length;c++){
                     if (vet_uniao[j] == vet_conjunto[c]) {
@@ -224,15 +215,154 @@ public class T3 {
             
         }
 
-        Vetores.mostrarInteiros(vet_conjunto);
+        //passa somente os valores para outro vetor, resolve o problema do tamanho do vetor.
+        int [] vet_final = new int[Index];
+
+        for(int i = 0; i<Index; i++){
+            vet_final [i] = vet_conjunto[i];
+        }
+
+    
+        return vet_final;
+    }   
+
+    public static int [] intersecaoVetor(int[] a, int[] b) {
+
+        int [] vet_uniao = new int[a.length + b.length];
+        int index = 0;
+        
+        //Concatena os dois vetores em um só;
+        for(int i =0; i <a.length;i++){
+
+            vet_uniao [index] = a[i];
+            index++;
+        }
+
+        for(int i =0; i <b.length;i++){
+
+            vet_uniao [index] = b[i];
+            index++;
+        }
+
         
 
-        System.out.println(conta_repe);
-    
-        return vet_uniao;
+
+        //adiciona os valores que estão presentes nos dois vetores, sem repetição para um novo vetor.
+      
+        int [] vet_conjunto = new int[vet_uniao.length];
+        int Index = 0;
+
+       
+        
+
+        for(int j = 0; j<vet_uniao.length;j++){
+
+            for(int c = 0; j<vet_uniao.length; c++){
+
+                if (vet_uniao[j] == vet_uniao[c]) {
+
+                    for(int i = 0; i<vet_conjunto.length;i++){
+
+                        if (vet_uniao[j] == vet_conjunto[i]) {
+                            break;
+                        }
+
+                        if (i == vet_conjunto.length-1) {
+                            vet_conjunto[Index] = vet_uniao[j];
+                            Index++;
+                        }
+                    }
+                    
+                    break;
+                }
+            }
+        }
+
+        
+        //passa somente os valores para outro vetor, resolve o problema do tamanho do vetor.
+        int [] vet_final = new int[Index];
+
+        for(int i = 0; i<Index; i++){
+            vet_final [i] = vet_conjunto[i];
+        }
+
+        return vet_final;
     }
 
 
 
+
+
+
+    public static int [] DiferencaEntreVetores(int[] a, int[] b) {
+
+        int [] vet_uniao = new int[a.length + b.length];
+        int index = 0;
+        
     
+        //adiciona os valores que estão presentes nos dois vetores, sem repetição para um novo vetor.
+      
+        int [] vet_conjunto = new int[a.length];
+        int Index = 0;
+
+        //Passa pelo vetor a e b vendo se se os valores são diferentes;
+        //Se forem diferentes é verificado se ele é diferente de todos os outros elementos;
+        //se for ele é adicionado ao vetor_conjunto;
+        for(int i = 0; i<a.length;i++){
+
+            for(int j =0; j<b.length;j++){
+
+                if (a[i]!= b[j]) {
+
+                    for(int c = 0;c<b.length;c++){
+                        if (a[i] == b[c]) {
+                            break;
+                        }
+
+                        if (c == b.length-1) {
+
+                            for(int d = 0; d<vet_conjunto.length;d++){
+
+                                if (b[c] == vet_conjunto[d]) {
+                                    break;
+                                }
+
+                                if (d == vet_conjunto.length-1) {
+                                    vet_conjunto[Index] = a[i];
+                                    Index++;
+                                    break;
+                                }
+
+                                
+                            }
+                            break;
+                        }
+                        
+                    }
+                    break;
+                }
+
+            }
+        }
+        
+
+        Vetores.mostrarInteiros(vet_conjunto);
+
+     
+
+        
+        //Utiliza a função retira repetição pra pegar o tamanho, declarando o tamanho do vetor final.
+        //Em seguida o vetor final recebe os valores que a função retira repetição retorna.
+        int [] vet_final = new int[Vetores.retiraRepeticaoInt(vet_conjunto).length];
+
+        vet_final = Vetores.retiraRepeticaoInt(vet_conjunto);
+
+
+
+        return vet_final;
+    }
+  
+
+
 }
+
