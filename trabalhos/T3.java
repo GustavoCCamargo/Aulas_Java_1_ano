@@ -330,15 +330,16 @@ public class T3 {
                                 if (d == vet_conjunto.length-1) {
                                     vet_conjunto[Index] = a[i];
                                     Index++;
-                                    break;
+                                    
                                 }
 
                                 
                             }
-                            break;
+                            
                         }
                         
                     }
+                    
                     break;
                 }
 
