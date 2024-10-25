@@ -1,6 +1,7 @@
 package trabalhos;
 
 import libs.Entrada;
+import libs.Matrizes;
 import libs.Vetores;
 
 public class T3 {
@@ -37,15 +38,39 @@ public class T3 {
 
        // Teste exercício 8
 
-      // Vetores.mostrarInteiros(intersecaoVetor(new int[] {1,1,1,2}, new int[] {2,2,1,2}));
+       // Vetores.mostrarInteiros(intersecaoVetor(new int[] {1,1,1,2}, new int[] {2,2,1,2}));
 
-        // Teste exercício 9
+       // Teste exercício 9
 
-       Vetores.mostrarInteiros(DiferencaEntreVetores(new int[] {1,1,3,3,4}, new int[] {2,2,5,6,4}));
+       //Vetores.mostrarInteiros(DiferencaEntreVetores(new int[] {1,1,3,3,4}, new int[] {2,2,5,6,4}));
 
        //Vetores.mostrarInteiros(Vetores.retiraRepeticaoInt(DiferencaEntreVetores(new int[] {1,1,3,4}, new int[] {2,2,5,6})));
+
+        // Teste exercício 10
+
+        //Matrizes.mostrarMatriz(trianguloPascal(5));
+
+        // Teste exercício 11
+
+       //int matriz[][] = {{1,2}, {4,5}, {7,8}};
+        //Matrizes.mostrarMatriz(matriz);
+
+        //Matrizes.mostrarMatriz(matrizTranspor(matriz));
+        
+
+        // Teste exercício 12
+        //int matriz[][] = {{1,2,3}, {4,5,6}, {7,8,9}};
+
+        //Matrizes.mostrarMatriz(matrizPermutacaoLinhas(matriz, 0, 2));
+
+        // Teste exercício 13
+        int matriz[][] = {{3,4}, {1,0}};
+        int matriZ[][] = {{5,1}, {0,1}};
+
+        Matrizes.mostrarMatriz(matrizMultInt(matriz, matriZ));
     }
 
+    // Teste exercício 1 
     public static void mostrarInteiros(int [] vet, char a) {
         
         System.out.print(vet[0] + "" + a);
@@ -60,6 +85,7 @@ public class T3 {
         System.out.println();
     }
 
+    // Teste exercício 2
     public static int [] filtraMaiores(int [] vet, int a) {
 
          
@@ -86,6 +112,7 @@ public class T3 {
         return vetor_result;
     }
 
+    // Teste exercício 3
     public static int [] filtraMenores(int [] vet, int a) {
 
          
@@ -112,6 +139,7 @@ public class T3 {
         return vetor_result;
     }
 
+    // Teste exercício 4
     public static boolean [] aplicarELogico(boolean [] v, boolean [] w){
 
         boolean [] vet_result = new boolean[v.length];
@@ -126,7 +154,7 @@ public class T3 {
 
     }
 
-
+    // Teste exercício 5
     public static boolean [] aplicarOuLogico(boolean [] v, boolean [] w){
 
         boolean [] vet_result = new boolean[v.length];
@@ -141,7 +169,7 @@ public class T3 {
 
     }
 
-
+    // Teste exercício 6
     public static int[] aplicarMascara(int [] vet, boolean [] w){
 
         int [] vet_result;
@@ -170,11 +198,11 @@ public class T3 {
 
     }
 
-
+    // Teste exercício 7
     public static int [] uniaoVetores(int [] a, int [] b){
 
         int [] vet_uniao = new int[a.length + b.length];
-        int conta_repe = 0;
+      
         int index = 0;
         
         //Concatena os dois vetores em um só;
@@ -226,6 +254,7 @@ public class T3 {
         return vet_final;
     }   
 
+    // Teste exercício 8
     public static int [] intersecaoVetor(int[] a, int[] b) {
 
         int [] vet_uniao = new int[a.length + b.length];
@@ -289,11 +318,7 @@ public class T3 {
         return vet_final;
     }
 
-
-
-
-
-
+    // Teste exercício 9
     public static int [] DiferencaEntreVetores(int[] a, int[] b) {
 
         int [] vet_uniao = new int[a.length + b.length];
@@ -358,12 +383,109 @@ public class T3 {
 
         vet_final = Vetores.retiraRepeticaoInt(vet_conjunto);
 
-
-
         return vet_final;
     }
-  
 
+    // Teste exercício 10
+    public static int [][] trianguloPascal(int n) {
+        
+        int [][] matriz = new int[n][n];
 
+        for(int i = 0; i<matriz.length; i++){
+            matriz[i][0] = 1;
+            matriz[i][i] = 1;
+
+            for(int j = 1 ; j<i; j++){
+
+                matriz [i][j] = matriz[i-1][j-1] + matriz[i-1][j];
+
+            }
+        }
+
+        return matriz;
+    }
+
+    // Teste exercício 11
+    public static int[][] matrizTranspor(int[][] mat) {
+
+        int [][] matriz_final = new int[mat[0].length][mat.length];
+
+        for(int i = 0; i<mat.length;i++){
+
+            for(int j=0; j<mat[0].length;j++){
+
+                matriz_final [j][i] = mat[i][j];
+            }
+        }
+        
+        return matriz_final;
+    }
+
+    // Teste exercício 12
+    public static int[][] matrizPermutacaoLinhas( int[][] matriz, int linha_a, int linha_b ){
+        //Codigo aqui
+        int[][] matriz_resultado = new int[matriz.length][matriz[1].length];
+
+        for(int i = 0; i<matriz.length;i++){
+            for(int j = 0; j<matriz[i].length;j++){
+
+                if (i == linha_a) {
+                    matriz_resultado[linha_b][j] = matriz[i][j];
+                }
+                if (i == linha_b) {
+                    matriz_resultado[linha_a][j] = matriz[i][j];
+                }
+
+                if (i != linha_a && i != linha_b) {
+                    matriz_resultado[i][j] = matriz[i][j];
+                }
+               
+            }
+        }
+
+        return matriz_resultado;
+    }
+
+    // Teste exercício 13
+
+    public static int[][] matrizMultInt(int[][] a, int[][] b) {
+
+        int [][] M;
+        int cont = 0;
+
+        if (a.length == b.length && a[0].length == b[0].length) {
+            
+            M = new int[a.length][a[0].length];
+
+            for(int i = 0; i<M.length;i++){
+
+                for(int j = 0; j<M[i].length; j++){
+
+                    for(int c = i; c<a.length; c++){
+
+                        if (c == i) {
+
+                            for(int d =0; d<a[c].length; d++){
+                                 
+                                cont += a[i][j] * b[i][j];
+                            }
+                        }
+                    
+                        if (c!=i) {
+                            M[i][j] = cont;
+                            cont = 0;
+                            break;
+                        }
+                    }
+
+                }
+
+            }
+
+            return M;
+        }
+
+        return new int[0][0];
+    }
 }
 
