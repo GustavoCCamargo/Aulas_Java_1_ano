@@ -1,5 +1,6 @@
 package libs;
-
+import java.util.Arrays;
+import java.util.Random;
 public class Vetores {
 
 
@@ -460,4 +461,71 @@ public class Vetores {
     
         return vet_final;
     }
+
+
+    public static int BuscaSequencial(int n, int [] vet){
+
+        for(int i =0; i<vet.length;i++){
+            if (vet[i] == n) {
+               return i;
+            }
+        }
+
+        return -1;
+
+    }
+
+  
+
+
+    public static int[] gerarValoresAleatorios(int n, int valor_min, int valor_max) {
+        Random random = new Random();
+        int[] vetor = new int[n];
+
+         for (int i = 0; i < n; i++) {
+             // Gera um número aleatório entre min (inclusivo) e max (inclusivo),
+                //   e salva na posição i do vetor
+            vetor[i] = random.nextInt(valor_max - valor_min + 1) + valor_min;
+        }
+            
+        return vetor;
+    }
+     
+    public static int[] gerarValoresAleatoriosOrdenado(int n, int valor_min, int valor_max) {
+
+        //Obtém um vetor de valores aleatórios
+        int[] vetor = gerarValoresAleatorios(n, valor_min, valor_max);
+
+        // Ordena o vetor antes de retornar
+        Arrays.sort(vetor);
+
+        return vetor;
+    }
+
+    public static int BuscaBinaria(int n, int [] vet){
+
+        int ini, fim, meio;
+
+        ini = 0;
+        fim = vet.length;
+
+        while(ini <= fim){
+            meio = (ini + fim) /2;
+
+            if (vet[meio] == n) {
+                return meio;
+            }else{
+                if (n < vet[meio]) {
+                    fim = meio-1;
+                }else{
+                    ini = meio +1;
+                }
+            }
+        }
+
+        return -1;
+
+    }
+
+
 }
