@@ -1,6 +1,6 @@
 package trabalhos;
 
-import libs.Entrada;
+//import libs.Entrada;
 import libs.Matrizes;
 import libs.Vetores;
 

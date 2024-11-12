@@ -5,7 +5,7 @@ import libs.Tempo
 public class Aula32 {
     public static void aula(){
         System.out.println("Aula de Busca!!");
-        ex04();
+        //ex04();
     }
 
     public static void ex01(){
@@ -53,24 +53,24 @@ public class Aula32 {
         
     }
 
-    public static void ex04(){
+    // public static void ex04(){
        
-        int [] vet =  Vetores.gerarValoresAleatoriosOrdenado(500000000, 0, 10000000);
-        int x =3000800;
-        int pos, poss;
+    //     int [] vet =  Vetores.gerarValoresAleatoriosOrdenado(500000000, 0, 10000000);
+    //     int x =3000800;
+    //    // int pos, poss;
 
-        long tempo_inici = Tempo.medirTempoIniciar();
-        pos = Vetores.BuscaSequencial(x,vet);
-        double tempo_segundos = Tempo.medirTempoFinalizarSegundos(tempo_inici);
+    //     long tempo_inici = Tempo.medirTempoIniciar();
+    //     pos = Vetores.BuscaSequencial(x,vet);
+    //     double tempo_segundos = Tempo.medirTempoFinalizarSegundos(tempo_inici);
 
-        //busca binária
-        long tempo_inicio = Tempo.medirTempoIniciar();
-        poss = Vetores.BuscaBinaria(x,vet);
-        double tempo_segundo = Tempo.medirTempoFinalizarSegundos(tempo_inicio);
+    //     //busca binária
+    //     long tempo_inicio = Tempo.medirTempoIniciar();
+    //     poss = Vetores.BuscaBinaria(x,vet);
+    //     double tempo_segundo = Tempo.medirTempoFinalizarSegundos(tempo_inicio);
 
-        System.out.printf("Tempode de busca sequencial com %d elementos %f segundos\n", vet.length, tempo_segundos);
-        System.out.printf("Tempode de busca Binária com %d elementos %f segundos\n", vet.length, tempo_segundo);
-    }
+    //     System.out.printf("Tempode de busca sequencial com %d elementos %f segundos\n", vet.length, tempo_segundos);
+    //     System.out.printf("Tempode de busca Binária com %d elementos %f segundos\n", vet.length, tempo_segundo);
+    // }
 
 
 }

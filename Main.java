@@ -2,10 +2,10 @@ import aulas.*;
 public class Main{
    public static void main(String[] args){
 
-   //System.out.println("-- Algoritmos e Estruturas de Dados --");
-   //Aula30.aula();
+   System.out.println("-- Algoritmos e Estruturas de Dados --");
+   System.out.println("|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|");
 
-   Aula34.aula();
+   Aula35.aula();
   
  }
 }
