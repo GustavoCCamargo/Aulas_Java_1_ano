@@ -5,7 +5,7 @@ public class Main{
    System.out.println("-- Algoritmos e Estruturas de Dados --");
    System.out.println("|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|");
 
-   Aula35.aula();
+   Aula36.aula();
   
  }
 }

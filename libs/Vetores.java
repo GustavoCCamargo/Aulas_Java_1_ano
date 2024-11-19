@@ -527,5 +527,97 @@ public class Vetores {
 
     }
 
+    public static int[] troca(int[] v, int i, int j){
+        int temp = v[i];
+        v[i] = v[j];
+        v[j] = temp;
+
+        return v;
+    }
+
+    public static void ordenarInsertionSort(int[] v){
+        int i, j;
+
+        for(i = 1; i<v.length; i++){
+            
+            j = i ;
+            while (j>0 && v[j-1] > v[j]){ {
+                v = troca(v,j,j-1);
+                j--;
+            }
+
+        }
+    
+    }
+    }
+
+    public static void ordenarSelectorSort(int[] v){
+
+        int i, j, menor_val, menor_pos;
+
+        for (i = 0; i < v.length-1; i++){
+            menor_val = v[i];
+            menor_pos = i;
+
+            for (j = i+1; j < v.length; j++){
+                if (v[j] < menor_val){
+                    menor_val = v[j];
+                    menor_pos = j;
+                }
+            }
+
+            Vetores.troca(v, i, menor_pos);
+        }
+
+
+    }
+
+    public static void ordenarBubbleSort(int[] v){
+        int i, j, troca;
+
+        for (i = 0; i < v.length-1; i++){
+            troca = 0;
+
+            for (j = 0; j < v.length-1-i; j++){
+                if (v[j] > v[j+1]){
+                    Vetores.troca(v, j, j+1);
+                    troca = 1;
+                }
+            }
+
+            if (troca == 0) {
+                break;
+            }
+        }
+
+    }
+
+    public static int[] merge(int[] va, int[] vb){
+        int i=0,j=0,k =0;
+        int [] vc = new int[va.length+vb.length];
+
+        while(i<va.length && j<vb.length){
+            if(va[i] < vb[j]){
+                vc[k] = va[i];
+                i++;
+            }else{
+                vc[k] = vb[j];
+                j++;
+            }
+            k++;
+        }
+        while(i<va.length){
+            vc[k] = va[i];
+            i++;
+            k++;
+        }
+
+        while(j<vb.length){
+            vc[k] = vb[j];
+            j++;
+            k++;
+        }
+     return vc;
+    }
 
 }
