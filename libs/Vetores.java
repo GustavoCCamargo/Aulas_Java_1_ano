@@ -620,4 +620,53 @@ public class Vetores {
      return vc;
     }
 
+    public static int[] subVetores(int[] v, int ini, int fim){
+
+        int i, k=0;
+
+        int [] sub_vet = new int[fim-ini];
+
+        for(i = ini; i< fim; i++){
+            sub_vet[k] = v[i];
+            k++;
+        }
+
+        return sub_vet;
+    }
+
+    public static int[] mergeSort(int [] v){
+
+        int [ ] ve_esquerdaOrdenado, ve_direitaOrdenado, v_oredenado;
+
+        if(v.length <= 1) {
+            return v;
+        } 
+
+        int [] vet_squerd, vet_direita;
+        int meio;
+
+        meio = v.length/2;
+
+        vet_squerd = subVetores(v, 0, meio);
+        vet_direita = subVetores(v, meio, v.length);
+
+        mergeSort(vet_squerd);
+        mergeSort(vet_direita);
+        
+        ve_esquerdaOrdenado = mergeSort(vet_squerd);
+        ve_direitaOrdenado = mergeSort(vet_direita);
+
+        v_oredenado = merge(ve_esquerdaOrdenado, ve_direitaOrdenado);
+
+        return v_oredenado;
+    }
+
+    public static int[] quickSort(int [] v) {
+
+
+
+
+        return v;
+    }
+
 }

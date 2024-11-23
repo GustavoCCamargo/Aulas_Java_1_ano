@@ -3,9 +3,9 @@ public class Main{
    public static void main(String[] args){
 
    System.out.println("-- Algoritmos e Estruturas de Dados --");
-   System.out.println("|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|");
+   System.out.println("----------------------------------------------");
 
-   Aula36.aula();
+   Aula37.aula();
   
  }
 }
