@@ -649,9 +649,6 @@ public class Vetores {
 
         vet_squerd = subVetores(v, 0, meio);
         vet_direita = subVetores(v, meio, v.length);
-
-        mergeSort(vet_squerd);
-        mergeSort(vet_direita);
         
         ve_esquerdaOrdenado = mergeSort(vet_squerd);
         ve_direitaOrdenado = mergeSort(vet_direita);
